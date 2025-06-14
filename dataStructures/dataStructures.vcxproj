@@ -19,15 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Algoritimos e prog\Ordenations\main.cpp" />
-    <ClCompile Include="..\..\Algoritimos e prog\Ordenations\pessoa.cpp" />
+    <ClCompile Include="aluno.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="nota.cpp" />
+    <ClCompile Include="pessoa.cpp" />
+    <ClCompile Include="sistema.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Algoritimos e prog\Ordenations\deque.h" />
-    <ClInclude Include="..\..\Algoritimos e prog\Ordenations\list.h" />
-    <ClInclude Include="..\..\Algoritimos e prog\Ordenations\node.h" />
-    <ClInclude Include="..\..\Algoritimos e prog\Ordenations\pessoa.h" />
-    <ClInclude Include="..\..\Algoritimos e prog\Ordenations\stack.h" />
+    <ClInclude Include="aluno.h" />
+    <ClInclude Include="deque.h" />
+    <ClInclude Include="list.h" />
+    <ClInclude Include="node.h" />
+    <ClInclude Include="nota.h" />
+    <ClInclude Include="pessoa.h" />
+    <ClInclude Include="sistema.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

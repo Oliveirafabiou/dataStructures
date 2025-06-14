@@ -44,6 +44,8 @@ public:
 		this->size++;
 	};
 
+
+
 	void pop() {
 		if (this->top == NULL) {
 			cout << "Pilha vazia!" << endl;
@@ -61,8 +63,8 @@ public:
 		this->size--;
 	}
 
-	T peek() {
-		if (this->top == NULL) {
+	T const& top() const {
+		if (this->top == nullptr) {
 			cout << "Pilha vazia!" << endl;
 			return T();
 		}
@@ -71,7 +73,7 @@ public:
 
 	void print() {
 		Node<T>* temp = this->base;
-		/*cout << "Pilha: ";*/
+		cout << "Pilha: \n";
 		while (temp != NULL) {
 			cout << temp->getElemento() << " ";
 			temp = temp->getProximo();
@@ -81,6 +83,10 @@ public:
 
 	int getSize() {
 		return this->size;
+	};
+
+	bool empty() {
+		return (this->size == 0);
 	};
 
 	void printSize() {
