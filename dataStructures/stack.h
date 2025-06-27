@@ -10,20 +10,20 @@ private:
 
 public:
 	Stack() {
-		this->base = NULL;
-		this->top = NULL;
+		this->base = nullptr;
+		this->top = nullptr;
 		this->size = 0;
 	};
 
 	~Stack() {
 		Node<T>* temp = this->top;
-		while (temp != NULL) {
+		while (temp != nullptr) {
 			Node<T>* anterior = temp->getAnterior();
 			delete temp;
 			temp = anterior;
 		}
-		this->base = NULL;
-		this->top = NULL;
+		this->base = nullptr;
+		this->top = nullptr;
 		this->size = 0;
 	}
 
@@ -31,7 +31,7 @@ public:
 	void push(T elemento) {
 		Node<T>* newNode = new Node<T>(elemento);
 		//Caso n�o tenha nada na pilha, o pr�prio nodo � a base e o topo
-		if (this->base == NULL) {
+		if (this->base == nullptr) {
 			this->base = newNode;
 			this->top = newNode;
 		}
@@ -47,17 +47,17 @@ public:
 
 
 	void pop() {
-		if (this->top == NULL) {
-			cout << "Pilha vazia!" << endl;
+		if (this->top == nullptr) {
+			std::cout << "Pilha vazia!" << std::endl;
 			return;
 		}
 		Node<T>* temp = this->top;
 		this->top = this->top->getAnterior();
-		if (this->top != NULL) {
-			this->top->setProximo(NULL);
+		if (this->top != nullptr) {
+			this->top->setProximo(nullptr);
 		}
 		else {
-			this->base = NULL;
+			this->base = nullptr;
 		}
 		delete temp;
 		this->size--;
@@ -65,7 +65,7 @@ public:
 
 	T const& top() const {
 		if (this->top == nullptr) {
-			cout << "Pilha vazia!" << endl;
+			std::cout << "Pilha vazia!" << std::endl;
 			return T();
 		}
 		return this->top->getElemento();
@@ -73,12 +73,12 @@ public:
 
 	void print() {
 		Node<T>* temp = this->base;
-		cout << "Pilha: \n";
-		while (temp != NULL) {
-			cout << temp->getElemento() << " ";
+		std::cout << "Pilha: \n";
+		while (temp != nullptr) {
+			std::cout << temp->getElemento() << " ";
 			temp = temp->getProximo();
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
 
 	int getSize() {
@@ -90,7 +90,7 @@ public:
 	};
 
 	void printSize() {
-		cout << "Tamanho da pilha: " << this->size << endl;
+		std::cout << "Tamanho da pilha: " << this->size << std::endl;
 	};
 
 };

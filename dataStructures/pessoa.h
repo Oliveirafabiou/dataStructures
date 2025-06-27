@@ -2,28 +2,28 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-using namespace std;
+
 
 class Pessoa {
     private:
 
-        string name;
+        std::string name;
         int age;
         char gender;
 
     public:
 
     Pessoa();
-    Pessoa(string name, int age, char gender);
+    Pessoa(std::string name, int age, char gender);
     ~Pessoa() = default;
 
 
-    string getName() const;
+    std::string getName() const;
     int getAge();
     char getGender();
 
-    void setAtributos(string name, int age, char gender);
-    void setName(string name);
+    void setAtributos(std::string name, int age, char gender);
+    void setName(std::string name);
     void setAge(int age);
     void setGender(char gender);
     void printPessoa();

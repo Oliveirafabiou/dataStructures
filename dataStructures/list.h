@@ -26,8 +26,8 @@ public:
 //Construtor
 template <class T>
 Lista<T>::Lista() {
-    head = NULL;
-    tail = NULL;
+    head = nullptr;
+    tail = nullptr;
     size = 0;
 };
 
@@ -35,7 +35,7 @@ Lista<T>::Lista() {
 template <class T>
 Lista<T>::~Lista() {
     Node<T>* temp = head;
-    while (temp != NULL) {
+    while (temp != nullptr) {
         Node<T>* next = temp->getProximo();
         delete temp;
         temp = next;
@@ -46,7 +46,7 @@ Lista<T>::~Lista() {
 template <class T>
 void Lista<T>::insert(T elemento) {
     Node<T>* newNode = new Node<T>(elemento);
-    if (head == NULL) {
+    if (head == nullptr) {
         head = tail = newNode;
     } else {
         tail->setProximo(newNode);
@@ -60,7 +60,7 @@ void Lista<T>::insert(T elemento) {
 template <class T>
 void Lista<T>::insertAndArrange(T elemento) {
     Node<T>* newNode = new Node<T>(elemento);
-    if (head == NULL) {
+    if (head == nullptr) {
         head = tail = newNode;
     } else {
         tail->setProximo(newNode);

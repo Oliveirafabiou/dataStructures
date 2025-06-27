@@ -29,8 +29,8 @@ public:
 // Construtor
 template <class T>
 Deque<T>::Deque() {
-	front = NULL;
-	back = NULL;
+	front = nullptr;
+	back = nullptr;
 	size = 0;
 }
 
@@ -38,7 +38,7 @@ Deque<T>::Deque() {
 template <class T>
 Deque<T>::~Deque() {
 	Node<T>* temp = front;
-	while (temp != NULL) {
+	while (temp != nullptr) {
 		Node<T>* next = temp->getProximo();
 		delete temp;
 		temp = next;
@@ -49,7 +49,7 @@ Deque<T>::~Deque() {
 template <class T>
 void Deque<T>::pushFront(T elemento) {
 	Node<T>* newNode = new Node<T>(elemento);
-	if (front == NULL) {
+	if (front == nullptr) {
 		front = back = newNode;
 	}
 	else {
@@ -64,7 +64,7 @@ void Deque<T>::pushFront(T elemento) {
 template <class T>
 void Deque<T>::pushBack(T elemento) {
 	Node<T>* newNode = new Node<T>(elemento);
-	if (back == NULL) {
+	if (back == nullptr) {
 		front = back = newNode;
 	}
 	else {
@@ -78,17 +78,17 @@ void Deque<T>::pushBack(T elemento) {
 // Remover do inicio
 template <class T>
 void Deque<T>::popFront() {
-	if (front == NULL) {
+	if (front == nullptr) {
 		cout << "Deque empty!" << endl;
 		return;
 	}
 	Node<T>* temp = front;
 	front = front->getProximo();
-	if (front != NULL) {
-		front->setAnterior(NULL);
+	if (front != nullptr) {
+		front->setAnterior(nullptr);
 	} 
 	else {
-		back = NULL;
+		back = nullptr;
 	}
 	delete temp;
 	size--;
@@ -97,17 +97,17 @@ void Deque<T>::popFront() {
 // Remover do final
 template <class T>
 void Deque<T>::popBack() {
-	if (back == NULL) {
+	if (back == nullptr) {
 		cout << "Deque empty!" << endl;
 		return;
 	}
 	Node<T>* temp = back;
 	back = back->getAnterior();
-	if (back != NULL) {
-		back->setProximo(NULL);
+	if (back != nullptr) {
+		back->setProximo(nullptr);
 	}
 	else {
-		front = NULL;
+		front = nullptr;
 	}
 	delete temp;
 	size--;
@@ -116,7 +116,7 @@ void Deque<T>::popBack() {
 // Consultar o elemento da frente "SEM RETIRAR"
 template <class T>
 T Deque<T>::getFront() {
-	if (front == NULL) {
+	if (front == nullptr) {
 		cout << "Deque empty!" << endl;
 		return T();
 	}
@@ -126,7 +126,7 @@ T Deque<T>::getFront() {
 // Consultar o elemento de trás "SEM RETIRAR"
 template <class T> 
 T Deque<T>::getBack() {
-	if (front == NULL) {
+	if (front == nullptr) {
 		cout << "Deque empty!" << endl;
 		return T();
 	}
@@ -138,7 +138,7 @@ template <class T>
 void Deque<T>::print() {
 	Node<T>* temp = front;
 	cout << "Deque: ";
-	while (temp != NULL) {
+	while (temp != nullptr) {
 		cout << temp->getElemento() << " ";
 		temp = temp->getProximo();
 	}
